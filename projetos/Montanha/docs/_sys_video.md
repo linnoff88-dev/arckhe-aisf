@@ -10,17 +10,17 @@ O campo `prompt` de cada cena usa estas diretrizes.
 - **talking_avatar**: avatar falante (retrato + áudio, até 200s)
 
 ## Regras do prompt de vídeo
-- Escreva em INGLÊS
+- Escreva em INGLêS
 - Inclua: composição, iluminação, movimento de câmera, emoção, ação dos personagens
 - Seja específico sobre direções (up/down/left/right) — o vídeo seguirá exatamente
-- ⚠ COERÊNCIA: o prompt de vídeo DEVE descrever a mesma ação/direção que o audio_text
+- ⚠ COERêNCIA: o prompt de vídeo DEVE descrever a mesma ação/direção que o audio_text
 
 ## Referências visuais (ref_imgs)
-- MÁXIMO 4 imagens por cena
+- MáXIMO 4 imagens por cena
 - Use SEMPRE a imagem do ambiente + imagem do personagem que aparece
 - NUNCA duas imagens do mesmo personagem (duplica o personagem na cena)
 
 ## Exemplo de prompt
 "Medium shot, Valen stands at school corridor, morning sunlight through windows,
 she turns to look at Lumi, curious expression, soft camera pan right,
-anime style, 2030 futuristic school, cinematic lighting"
+anime style, 2030 futuristic school, carckhetic lighting"

@@ -174,7 +174,7 @@
     "input_audio": "uploads/inetusx/eps01/c03_maya_01.mp3"
   },
   {
-    "label": "C03-D · Valen — 'É um cachorro-robô?'",
+    "label": "C03-D · Valen — 'é um cachorro-robô?'",
     "task_type": "talking_avatar",
     "prompt": "A student speaking from behind, deadpan expression, pretending not to be interested but clearly looking at the drawing. Dry curiosity.",
     "resolution": "720P",
@@ -184,7 +184,7 @@
     "input_audio": "uploads/inetusx/eps01/c03_valen_01.mp3"
   },
   {
-    "label": "C03-E · Maya — 'É. Ele parece abandonado… mas não devia estar.'",
+    "label": "C03-E · Maya — 'é. Ele parece abandonado… mas não devia estar.'",
     "task_type": "talking_avatar",
     "prompt": "A girl speaking quietly, looking down at her drawing with a contemplative, gently melancholy expression. A genuine thought, not just small talk.",
     "resolution": "720P",
@@ -596,7 +596,7 @@
     "input_audio": "uploads/inetusx/eps01/c09_caio_01.mp3"
   },
   {
-    "label": "C09-D · Lumi — 'Às vezes a previsão erra.'",
+    "label": "C09-D · Lumi — 'às vezes a previsão erra.'",
     "task_type": "talking_avatar",
     "prompt": "A student responding gently, eyes following reflections on the wet street, thoughtful and unhurried.",
     "resolution": "720P",
@@ -618,7 +618,7 @@
   {
     "label": "C09-F · Marquise — Silêncio confortável, ninguém quer ir",
     "task_type": "reference_to_video",
-    "prompt": "Four students standing shoulder to shoulder under a rain shelter, watching the rain. No one moves. City lights begin to glow in the wet evening. Cinematic medium shot, quiet mood.",
+    "prompt": "Four students standing shoulder to shoulder under a rain shelter, watching the rain. No one moves. City lights begin to glow in the wet evening. Carckhetic medium shot, quiet mood.",
     "resolution": "720P",
     "duration": 5,
     "seed": 1086,
@@ -690,7 +690,7 @@
   {
     "label": "C10-F · Portão — Plano final, a pausa antes de ir",
     "task_type": "reference_to_video",
-    "prompt": "Four students at the school gate at dusk. No one rushes. A long quiet beat as the city glows behind them. Final wide cinematic shot, warm soft focus, golden light.",
+    "prompt": "Four students at the school gate at dusk. No one rushes. A long quiet beat as the city glows behind them. Final wide carckhetic shot, warm soft focus, golden light.",
     "resolution": "720P",
     "duration": 6,
     "seed": 1096,

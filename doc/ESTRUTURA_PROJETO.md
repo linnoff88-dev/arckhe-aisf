@@ -35,7 +35,7 @@ Imagens de referência **permanentes** do projeto.
 ---
 
 ### `audios/`
-Áudios de referência **permanentes** do projeto.
+áudios de referência **permanentes** do projeto.
 
 - Amostras de voz dos personagens (para clonagem de voz)
 - Efeitos sonoros recorrentes
@@ -70,7 +70,7 @@ Arquivos **temporários** e de trabalho em andamento.
 ### `episodios/<nome-do-episodio>/`
 Assets **gerados automaticamente** para cada episódio específico.
 
-Criada automaticamente ao clicar em **🖼 Imagens** ou **🎵 Áudios** dentro do episódio.
+Criada automaticamente ao clicar em **🖼 Imagens** ou **🎵 áudios** dentro do episódio.
 
 O nome da subpasta é derivado do nome da fila/episódio (slugificado).
 
@@ -80,7 +80,7 @@ O nome da subpasta é derivado do nome da fila/episódio (slugificado).
 - Após geração, o path é salvo como primeiro `ref_imgs` da cena (para uso no vídeo)
 
 #### `episodios/<nome>/audios/`
-- Áudios gerados via ElevenLabs TTS
+- áudios gerados via ElevenLabs TTS
 - Um arquivo `.mp3` por cena, nomeado pelo título da cena
 - Após geração, o path é salvo como `input_audio` da cena
 
@@ -106,7 +106,7 @@ O nome da subpasta é derivado do nome da fila/episódio (slugificado).
 5. Aprovar → Criar Fila (episódio vinculado ao projeto)
 
 6. 🖼 Imagens → gera via nano-banana → salva em episodios/<ep>/imagens/
-7. 🎵 Áudios  → gera via ElevenLabs  → salva em episodios/<ep>/audios/
+7. 🎵 áudios  → gera via ElevenLabs  → salva em episodios/<ep>/audios/
 8. 🎬 Vídeos  → roda fila SkyReels   → salva em result/<task>/<seed>_<ts>.mp4
 ```
 
@@ -119,7 +119,7 @@ O nome da subpasta é derivado do nome da fila/episódio (slugificado).
 | Geração de prompts | Claude (Anthropic) | CLI subprocess |
 | Imagem com referência | Gemini 2.5 Flash | `fal-ai/nano-banana/edit` |
 | Imagem sem referência | Gemini 2.5 Flash | `fal-ai/nano-banana` |
-| Áudio / TTS | ElevenLabs | `eleven_multilingual_v2` |
+| áudio / TTS | ElevenLabs | `eleven_multilingual_v2` |
 | Vídeo | SkyReels V3 (local) | `reference_to_video` / `single_shot_extension` / etc. |
 
 ---

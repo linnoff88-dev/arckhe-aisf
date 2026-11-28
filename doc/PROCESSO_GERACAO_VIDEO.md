@@ -297,7 +297,7 @@ Após o forward pass:
 ```python
 latents = scheduler.step(noise_pred, t, latents)[0]
 ```
-O scheduler usa a previsão de ruído para calcular os latents "menos ruidosos" para o próximo step. É a "receita" matemática do UniPC.
+O scheduler usa a previsão de ruído para calcular os latents "menos ruidosos" para o próximo step. é a "receita" matemática do UniPC.
 
 **Com `--offload`:** o transformer vai para GPU antes do loop e volta para CPU depois.
 

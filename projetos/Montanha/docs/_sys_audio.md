@@ -1,10 +1,10 @@
-# Guia de Geração de Áudio (ElevenLabs TTS)
+# Guia de Geração de áudio (ElevenLabs TTS)
 
 Este arquivo define as regras para geração de áudio via ElevenLabs TTS.
 O campo `audio_text` de cada cena usa estas diretrizes.
 
 ## Idioma
-- PORTUGUÊS BRASILEIRO exclusivamente
+- PORTUGUêS BRASILEIRO exclusivamente
 
 ## Tom e estilo
 - Narração: terceira pessoa, tempo presente, tom cinemático e envolvente

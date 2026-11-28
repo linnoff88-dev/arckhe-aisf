@@ -2,7 +2,7 @@
   <img src="assets/logo2.png" alt="SkyReels Logo" width="40%">
 </p>
 
-<h1 align="center">SkyReels V3 — INEMA Web UI</h1>
+<h1 align="center">SkyReels V3 — ARCKHé AI Web UI</h1>
 
 <p align="center">
   Fork do <a href="https://github.com/SkyworkAI/SkyReels-V3">SkyworkAI/SkyReels-V3</a> com Web UI completa para produção de episódios em batch.
@@ -40,7 +40,7 @@ Este repositório é um fork do modelo de geração de vídeo **SkyReels V3**, c
 ## Instalação
 
 ```bash
-git clone https://github.com/inematds/skyreelsv3
+git clone https://github.com/linnoff88-dev/skyreelsv3
 cd skyreelsv3
 
 python3.12 -m venv .venv
@@ -81,7 +81,7 @@ Acesse de qualquer dispositivo na rede local via `http://<ip-do-servidor>:7860`.
 | **Reference Images** | Caminhos separados por vírgula — 1 a 4 imagens (`reference_to_video`) |
 | **Input Video** | Caminho local ou URL para tasks de extensão |
 | **Portrait Image** | Imagem de retrato para `talking_avatar` (jpg / png / gif / bmp) |
-| **Audio File** | Áudio de condução para `talking_avatar` (mp3 / wav · máx 200 s) |
+| **Audio File** | áudio de condução para `talking_avatar` (mp3 / wav · máx 200 s) |
 | **Resolution** | `480P` / `540P` / `720P` — `talking_avatar` só aceita `480P` ou `720P` |
 | **Duration** | Segundos de saída — ignorado em `talking_avatar` (definido pelo áudio) |
 | **Seed** | Semente para reprodutibilidade |

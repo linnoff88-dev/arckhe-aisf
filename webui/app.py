@@ -33,18 +33,18 @@ DEFAULT_SYSTEM_PROMPT = """\
 Você é um assistente de produção de série animada com IA (SkyReels V3). A partir da descrição do episódio e dos recursos do projeto, gere um array JSON com TODAS as cenas necessárias para cobrir a história completa.
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-DESCRIÇÃO DO EPISÓDIO:
+DESCRIçãO DO EPISÓDIO:
 {description}
 
 {resources}
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-PARÂMETROS TÉCNICOS:
+PARâMETROS TéCNICOS:
 - Task type   : {task_type}
 - Resolução   : {resolution}
-- Duração/cena: entre 5 e 8s (MÁXIMO 10s — nunca ultrapassar)
+- Duração/cena: entre 5 e 8s (MáXIMO 10s — nunca ultrapassar)
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-REFERÊNCIA DAS TASKS DO SKYREELS V3:
+REFERêNCIA DAS TASKS DO SKYREELS V3:
 
 • reference_to_video — Gera vídeo a partir de 1–4 imagens de referência + prompt de texto (modelo 14B).
   O campo "ref_imgs" é OBRIGATÓRIO (paths das imagens do personagem/ambiente da cena).
@@ -62,12 +62,12 @@ REFERÊNCIA DAS TASKS DO SKYREELS V3:
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 REGRAS OBRIGATÓRIAS — preencha TODOS os campos:
 
-1. PROMPT DE VÍDEO (campo "prompt"):
-   - Prompt CURTO em INGLÊS (máximo 2 frases) — foque em MOVIMENTO e CÂMERA, não em narrativa
+1. PROMPT DE VíDEO (campo "prompt"):
+   - Prompt CURTO em INGLêS (máximo 2 frases) — foque em MOVIMENTO e CâMERA, não em narrativa
    - O modelo SkyReels anima as imagens de referência — o prompt apenas guia a movimentação
    - Estrutura ideal: "[tipo de plano], [ação principal], [movimento de câmera], anime style"
    - ⚠ PROIBIDO: descrições longas, narrativas, contexto histórico ou explicações no prompt
-   - ⚠ O prompt NÃO precisa repetir o que as imagens já mostram (cenário, personagens, cores)
+   - ⚠ O prompt NãO precisa repetir o que as imagens já mostram (cenário, personagens, cores)
    - Bons exemplos:
      "Medium shot, girl stands up from desk gesturing excitedly, camera slowly pushes in, anime style"
      "Wide shot, characters walk through corridor, camera dollies forward, warm lighting"
@@ -76,16 +76,16 @@ REGRAS OBRIGATÓRIAS — preencha TODOS os campos:
      "Wide establishing shot of a futuristic holographic classroom in 2030. Four teenagers sit at interactive desks as holographic projections of ancient Greek maps illuminate the room in blue and gold light. A small robot floats near the teacher's desk."
 
 2. PROMPT DE IMAGEM (campo "image_prompt"):
-   - Prompt em INGLÊS para geração de imagem estática via fal.ai / Flux
+   - Prompt em INGLêS para geração de imagem estática via fal.ai / Flux
    - Descreva: personagens presentes, ambiente, cores dominantes, estilo artístico, iluminação, ângulo
    - Mantenha estilo visual consistente com os personagens do projeto
-   - ⚠ ESCALA FÍSICA REAL: animais devem aparecer em tamanho real — hamster é do tamanho de uma mão,
+   - ⚠ ESCALA FíSICA REAL: animais devem aparecer em tamanho real — hamster é do tamanho de uma mão,
      gato do tamanho de um colo, robô companheiro menor que os estudantes. NUNCA exagere o tamanho
      de animais — especifique sempre: "small hamster on Maya's palm", "tiny robot at knee height"
    - Exemplo: "anime style illustration, 2030 futuristic school corridor, teenage girl with purple hair and confident expression, warm morning light, small brown hamster on her shoulder, vibrant colors"
 
-3. TEXTO DE ÁUDIO (campo "audio_text"):
-   - Narração ou diálogos em PORTUGUÊS BRASILEIRO para geração via ElevenLabs
+3. TEXTO DE áUDIO (campo "audio_text"):
+   - Narração ou diálogos em PORTUGUêS BRASILEIRO para geração via ElevenLabs
    - Inclua APENAS o que será falado/narrado nesta cena
    - ⚠ NUNCA inclua o nome do personagem como prefixo — escreva DIRETO a fala ou narração.
      ERRADO: "Valen: Você também vai para a turma do Professor Dex?"
@@ -94,20 +94,20 @@ REGRAS OBRIGATÓRIAS — preencha TODOS os campos:
      CORRETO: "Claro, vamos juntas!"
    - Se a cena for silenciosa ou só musical, use string vazia: ""
    - Mantenha tom e personalidade dos personagens conforme os documentos do projeto
-   - ⚠ REGRA DE PROPORÇÃO ÁUDIO/VÍDEO (CRÍTICA):
+   - ⚠ REGRA DE PROPORçãO áUDIO/VíDEO (CRíTICA):
      O áudio gerado DEVE caber na duração do vídeo. Referência de tempo:
      · 5s de vídeo  → máximo 1-2 frases curtas (~15-20 palavras)
      · 8s de vídeo  → máximo 2-3 frases curtas (~25-35 palavras)
      · 10s de vídeo → máximo 3-4 frases curtas (~40-50 palavras)
      Texto longo demais gera áudio maior que o clip e fica cortado ou dessincronizado.
-     EXCEÇÃO: se a descrição do episódio EXPLICITAMENTE pedir narração longa, monólogo
+     EXCEçãO: se a descrição do episódio EXPLICITAMENTE pedir narração longa, monólogo
      ou sequência de imagens estáticas, então pode usar texto mais longo e ajustar a
      duração do vídeo proporcionalmente.
 
-4. IMAGENS DE REFERÊNCIA (campo "ref_imgs"):
+4. IMAGENS DE REFERêNCIA (campo "ref_imgs"):
    - Use os paths EXATOS das imagens listadas nos recursos acima
-   - MÁXIMO 4 imagens por cena — NUNCA coloque mais de 4 (limite técnico do pipeline)
-   - REGRA DE CONSISTÊNCIA DE AMBIENTE: SEMPRE inclua a imagem do local/ambiente em TODA
+   - MáXIMO 4 imagens por cena — NUNCA coloque mais de 4 (limite técnico do pipeline)
+   - REGRA DE CONSISTêNCIA DE AMBIENTE: SEMPRE inclua a imagem do local/ambiente em TODA
      cena que acontece naquele ambiente — inclusive closes e planos de diálogo.
      Sem a imagem do ambiente, o modelo gera um fundo aleatório e inconsistente.
    - Composição ideal por cena:
@@ -118,7 +118,7 @@ REGRAS OBRIGATÓRIAS — preencha TODOS os campos:
    - Exemplo ERRADO (close sem ambiente): ["projetos/X/imagens/valen.png"]  ← fundo inconsistente!
    - ⚠ PROIBIDO: colocar duas imagens diferentes que mostrem o MESMO personagem — isso
      DUPLICA o personagem na cena (duas cópias do mesmo personagem aparecem lado a lado).
-     Use NO MÁXIMO uma imagem por personagem.
+     Use NO MáXIMO uma imagem por personagem.
    - ⚠ USE A IMAGEM CORRETA para o tipo de personagem: se o personagem é um ANIMAL
      (ratinho, cachorro, robô, etc.), use a imagem desse animal — NUNCA substitua por uma
      imagem de personagem humano para representá-lo.
@@ -127,7 +127,7 @@ REGRAS OBRIGATÓRIAS — preencha TODOS os campos:
    - Extraia o voice_id do ElevenLabs diretamente dos documentos do projeto (tabela de casting)
    - Coloque o voice_id do personagem principal que fala ou narra a cena
    - Se a cena for silenciosa ou a voz for genérica/narradora, use string vazia: ""
-   - NÃO invente voice_ids — use SOMENTE os que estão explicitamente nos docs do projeto
+   - NãO invente voice_ids — use SOMENTE os que estão explicitamente nos docs do projeto
    - Exemplo: "FIEA0c5UHH9JnvWaQrXS" (Valen), "vibfi5nlk3hs8Mtvf9Oy" (Lumi), etc.
 
 6. TRILHA DE FUNDO (campo "audio_bg"):
@@ -137,11 +137,11 @@ REGRAS OBRIGATÓRIAS — preencha TODOS os campos:
    - Se não há trilha disponível ou a cena não precisa, use string vazia: ""
    - Exemplo: "projetos/INETUSX/audios/tema_principal.mp3"
 
-7. CONSISTÊNCIA NARRATIVA:
+7. CONSISTêNCIA NARRATIVA:
    - Use os documentos do projeto como base de conhecimento absoluta para personagens, universo e vozes
    - Use EXATAMENTE os nomes dos personagens conforme os documentos do projeto — NUNCA invente
      nomes alternativos ou genéricos (ex: se o personagem chama "Ratinho", não use "Rato" ou "ratinho")
-   - ⚠ COERÊNCIA AÇÃO/DIREÇÃO: o audio_text e o prompt de vídeo DEVEM descrever a MESMA
+   - ⚠ COERêNCIA AçãO/DIREçãO: o audio_text e o prompt de vídeo DEVEM descrever a MESMA
      ação na MESMA direção. Se a narração diz "subindo a escada", o prompt DEVE dizer
      "walking UP the stairs" — jamais "walking down". Contradições entre áudio e vídeo
      destroem completamente a coerência narrativa.
@@ -170,7 +170,7 @@ Você é um supervisor de produção de série animada.
 A partir da descrição do episódio e dos recursos visuais do projeto, faça:
 
 1. MAPEAMENTO DE AMBIENTES: Identifique todos os locais/ambientes onde as cenas acontecem
-2. ELEMENTOS NOVOS: Identifique elementos visuais que NÃO têm imagem de referência disponível na lista abaixo
+2. ELEMENTOS NOVOS: Identifique elementos visuais que NãO têm imagem de referência disponível na lista abaixo
 
 Imagens de referência disponíveis no projeto:
 {images_list}{docs_str}
@@ -198,7 +198,7 @@ Retorne SOMENTE um JSON válido com este formato exato:
 
 REGRAS OBRIGATÓRIAS:
 - environments.existing_ref: use o path EXATO de uma imagem da lista acima (copie exatamente como está), ou null
-- new_elements: SOMENTE elementos que NÃO têm nenhuma imagem correspondente na lista acima
+- new_elements: SOMENTE elementos que NãO têm nenhuma imagem correspondente na lista acima
 - Máximo 5 novos elementos — priorize ambientes e personagens novos mais importantes
 - Se todos os ambientes já têm referência visual: new_elements = []
 
@@ -228,7 +228,7 @@ As regras aqui são usadas pela IA ao gerar o campo `image_prompt` de cada cena.
 - Gato/cachorro pequeno: tamanho de um lap (colo)
 - Estudantes: altura humana normal (1,6m–1,8m)
 - Robô companheiro: altura de criança ou menor (não maior que os estudantes)
-- NUNCA exagere o tamanho de animais — eles são coadjuvantes, NÃO protagonistas visuais
+- NUNCA exagere o tamanho de animais — eles são coadjuvantes, NãO protagonistas visuais
 - Exceção SOMENTE se a descrição da cena explicitamente pedir tamanho diferente
 - Para especificar escala no prompt: "small hamster sitting on Maya's palm, hand-sized pet"
 
@@ -240,13 +240,13 @@ small brown hamster resting on her shoulder, realistic proportions"
 """
 
 DEFAULT_AUDIO_GUIDE = """\
-# Guia de Geração de Áudio (ElevenLabs TTS)
+# Guia de Geração de áudio (ElevenLabs TTS)
 
 Este arquivo define as regras para geração de áudio via ElevenLabs TTS.
 O campo `audio_text` de cada cena usa estas diretrizes.
 
 ## Idioma
-- PORTUGUÊS BRASILEIRO exclusivamente
+- PORTUGUêS BRASILEIRO exclusivamente
 
 ## Tom e estilo
 - Narração: terceira pessoa, tempo presente, tom cinemático e envolvente
@@ -257,7 +257,7 @@ O campo `audio_text` de cada cena usa estas diretrizes.
 - Inclua APENAS o que será falado ou narrado — sem descrições de cena
 - Se a cena for silenciosa ou apenas musical, use string vazia: ""
 
-## ⚠ REGRA CRÍTICA: Proporção áudio/vídeo
+## ⚠ REGRA CRíTICA: Proporção áudio/vídeo
 O áudio DEVE caber na duração do clip de vídeo. Referência:
 - 5s de vídeo  → máximo 1-2 frases curtas (~15-20 palavras)
 - 8s de vídeo  → máximo 2-3 frases curtas (~25-35 palavras)
@@ -265,7 +265,7 @@ O áudio DEVE caber na duração do clip de vídeo. Referência:
 
 Texto longo demais gera áudio maior que o clip → dessincronização.
 
-EXCEÇÃO: se a descrição do episódio pedir EXPLICITAMENTE narração longa,
+EXCEçãO: se a descrição do episódio pedir EXPLICITAMENTE narração longa,
 monólogo ou sequência de imagens, pode usar texto mais longo e ajustar
 a duração do vídeo proporcionalmente.
 
@@ -282,16 +282,16 @@ O campo `prompt` de cada cena usa estas diretrizes.
 
 ## Como o SkyReels funciona
 O modelo ANIMA as imagens de referência (ref_imgs). O prompt apenas guia:
-- Que AÇÃO/MOVIMENTO ocorre (personagem anda, vira, gesticula)
-- Que MOVIMENTO DE CÂMERA usar (pan, dolly, push in, zoom)
-- O prompt NÃO precisa descrever o que já está nas imagens (cenário, cores, roupas)
+- Que AçãO/MOVIMENTO ocorre (personagem anda, vira, gesticula)
+- Que MOVIMENTO DE CâMERA usar (pan, dolly, push in, zoom)
+- O prompt NãO precisa descrever o que já está nas imagens (cenário, cores, roupas)
 
 ## Regras do prompt de vídeo
-- Escreva em INGLÊS — MÁXIMO 2 frases curtas
+- Escreva em INGLêS — MáXIMO 2 frases curtas
 - Foque em: tipo de plano + ação + movimento de câmera
 - ⚠ PROIBIDO: descrições longas, narrativas, contexto ou explicações
 - Seja específico sobre direções (up/down/left/right)
-- ⚠ COERÊNCIA: o prompt DEVE descrever a mesma ação/direção que o audio_text
+- ⚠ COERêNCIA: o prompt DEVE descrever a mesma ação/direção que o audio_text
 
 ## Bons exemplos
 "Medium shot, girl stands up gesturing excitedly, camera slowly pushes in, anime style"
@@ -304,7 +304,7 @@ sit at interactive desks as holographic projections of ancient Greek maps and th
 Parthenon illuminate the room in blue and gold light." ← MUITO LONGO, descritivo demais
 
 ## Referências visuais (ref_imgs)
-- MÁXIMO 4 imagens por cena
+- MáXIMO 4 imagens por cena
 - Use SEMPRE a imagem do ambiente + imagem do personagem que aparece
 - NUNCA duas imagens do mesmo personagem (duplica o personagem na cena)
 \
@@ -1746,7 +1746,7 @@ def _nq_gen_prompt_image(nq_id: int, item_type: str, idx: int):
 
     items = nq.get(item_type, [])
     if idx < 0 or idx >= len(items):
-        return jsonify({"error": "Índice inválido"}), 400
+        return jsonify({"error": "índice inválido"}), 400
 
     item = items[idx]
     proj_name = nq.get("project", "")
@@ -1820,7 +1820,7 @@ def _nq_patch_prompt_item(nq_id: int, item_type: str, idx: int):
             return jsonify({"error": "Fila não encontrada"}), 404
         items = nq.get(item_type, [])
         if idx < 0 or idx >= len(items):
-            return jsonify({"error": "Índice inválido"}), 400
+            return jsonify({"error": "índice inválido"}), 400
         for field in ("name", "image_prompt", "description", "existing_ref"):
             if field in data:
                 items[idx][field] = data[field]
@@ -1975,8 +1975,8 @@ def nq_analyze_environments(nq_id):
             docs_block   = ("\n\nDocumentos do projeto:\n" + "\n\n".join(all_docs_content)[:3000]) if all_docs_content else ""
 
             analyse_prompt = f"""Você é um supervisor de arte de uma série animada. Analise as cenas abaixo e identifique:
-1. Todos os AMBIENTES/LOCAÇÕES únicos que aparecem (corredor, sala de aula, laboratório, etc.)
-2. Elementos visuais NOVOS que aparecem nas cenas mas NÃO têm imagem de referência na lista abaixo
+1. Todos os AMBIENTES/LOCAçÕES únicos que aparecem (corredor, sala de aula, laboratório, etc.)
+2. Elementos visuais NOVOS que aparecem nas cenas mas NãO têm imagem de referência na lista abaixo
 
 Imagens disponíveis no projeto (paths exatos):
 {images_list}
@@ -2006,7 +2006,7 @@ Retorne SOMENTE um JSON válido (sem markdown) com este formato exato:
   ]
 }}
 
-Regras CRÍTICAS para existing_ref:
+Regras CRíTICAS para existing_ref:
 - Analise o nome e descrição de cada ambiente/elemento e compare com CADA arquivo da lista acima
 - Se o nome do arquivo (sem extensão) corresponder ao ambiente ou elemento — mesmo parcialmente — coloque o PATH EXATO
 - Exemplos: ambiente "Escola" → "projetos/PROJ/imagens/escola.png"; elemento "Pix-Z" → "projetos/PROJ/imagens/pix-z.png"
@@ -2102,7 +2102,7 @@ def nq_recreate_prompts(nq_id):
 
             images_list = "\n".join(f"- {p}" for p in all_images) if all_images else "Nenhuma"
             docs_block = ("\n\nDocumentos do projeto:\n" + "\n\n".join(all_docs_content)[:4000]) if all_docs_content else ""
-            audios_block = ("\n\nÁudios disponíveis:\n" + "\n".join(f"- {a}" for a in all_audios)) if all_audios else ""
+            audios_block = ("\n\náudios disponíveis:\n" + "\n".join(f"- {a}" for a in all_audios)) if all_audios else ""
 
             # Descrição do episódio
             ep_desc = nq.get("description", "") or ""
@@ -2127,10 +2127,10 @@ def nq_recreate_prompts(nq_id):
 
             recreate_prompt = f"""Você é um diretor de produção de série animada com IA (SkyReels V3).
 
-Analise o episódio abaixo e REFAÇA os prompts de TODAS as cenas, melhorando qualidade e coerência.
+Analise o episódio abaixo e REFAçA os prompts de TODAS as cenas, melhorando qualidade e coerência.
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-DESCRIÇÃO DO EPISÓDIO:
+DESCRIçãO DO EPISÓDIO:
 {ep_desc}
 
 Imagens de referência disponíveis:
@@ -2139,11 +2139,11 @@ Imagens de referência disponíveis:
 {audios_block}
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-GUIA DE VÍDEO:
+GUIA DE VíDEO:
 {_sys_video}
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-GUIA DE ÁUDIO:
+GUIA DE áUDIO:
 {_sys_audio}
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -2151,18 +2151,18 @@ CENAS ATUAIS (a serem melhoradas):
 {json.dumps(scenes_current, ensure_ascii=False, indent=2)}
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-INSTRUÇÕES — SIGA À RISCA:
+INSTRUçÕES — SIGA à RISCA:
 
-Para CADA cena, REFAÇA os seguintes campos (valores NOVOS, não copie os atuais):
+Para CADA cena, REFAçA os seguintes campos (valores NOVOS, não copie os atuais):
 
-1. "prompt" — prompt de vídeo CURTO em inglês. MÁXIMO 2 frases.
+1. "prompt" — prompt de vídeo CURTO em inglês. MáXIMO 2 frases.
    Foque SOMENTE em: tipo de plano + ação/movimento + câmera.
-   O modelo anima as imagens de referência — NÃO descreva cenário/cores/roupas.
+   O modelo anima as imagens de referência — NãO descreva cenário/cores/roupas.
    BOM: "Medium shot, girl stands up gesturing excitedly, camera pushes in, anime style"
    RUIM: "Wide establishing shot of a futuristic holographic classroom in 2030 with..."
 
 2. "audio_text" — fala ou narração em português brasileiro.
-   ⚠ A DURAÇÃO DO VÍDEO É FIXA (campo duration). O texto DEVE ser curto o suficiente para caber:
+   ⚠ A DURAçãO DO VíDEO é FIXA (campo duration). O texto DEVE ser curto o suficiente para caber:
    · duration 5s  → máximo 15-20 palavras (1-2 frases curtíssimas)
    · duration 8s  → máximo 25-35 palavras (2-3 frases curtas)
    · duration 10s → máximo 40-50 palavras (3-4 frases curtas)
@@ -2173,11 +2173,11 @@ Para CADA cena, REFAÇA os seguintes campos (valores NOVOS, não copie os atuais
 
 4. "voice_id" — use SOMENTE voice_ids da tabela de casting nos docs do projeto.
    Cada cena deve ter o voice_id do personagem que FALA naquela cena.
-   NÃO invente voice_ids — copie EXATAMENTE da tabela.
+   NãO invente voice_ids — copie EXATAMENTE da tabela.
 
 5. "audio_bg" — path da trilha (projetos/<nome>/audios/<arquivo>) ou "" se não houver
 
-⚠ CAMPOS QUE NÃO DEVEM SER ALTERADOS (não incluir no retorno):
+⚠ CAMPOS QUE NãO DEVEM SER ALTERADOS (não incluir no retorno):
    label, index, ref_imgs, task_type, duration, seed, offload, low_vram, resolution
 
 Retorne SOMENTE um array JSON com os campos atualizados para cada cena, no formato:
@@ -2465,9 +2465,9 @@ def nq_regenerate_prompts(nq_id):
                 for env in environments:
                     ref = amb_map.get(env["name"].lower()) or env.get("existing_ref")
                     env_section += f"- {env['name']}: {env.get('description','')}\n"
-                    if ref: env_section += f"  → REFERÊNCIA: {ref}\n"
+                    if ref: env_section += f"  → REFERêNCIA: {ref}\n"
             resources = f"\nImagens de referência:\n{imgs_list}\n"
-            if all_audios: resources += "\nÁudios:\n" + "\n".join(f"- {a}" for a in all_audios) + "\n"
+            if all_audios: resources += "\náudios:\n" + "\n".join(f"- {a}" for a in all_audios) + "\n"
             if all_docs: resources += "\nDocumentos:\n" + "\n\n".join(all_docs) + "\n"
             if env_section: resources += env_section
 
@@ -2600,7 +2600,7 @@ def _strip_audio_prefix(text: str) -> str:
     # Padrão: "[Nome] texto" ou "[Nome]: texto"
     text = _re.sub(r'^\s*\[[^\]]{1,40}\]\s*:?\s*', '', text)
     # Padrão: "Nome: texto" ou "Nome — texto" ou "Nome - texto" (hífen só com espaço antes)
-    text = _re.sub(r'^\s*[A-ZÀ-Ú][a-zA-ZÀ-ú ]{1,30}\s*(?::|—| - )\s*', '', text)
+    text = _re.sub(r'^\s*[A-Zà-Ú][a-zA-Zà-ú ]{1,30}\s*(?::|—| - )\s*', '', text)
     # Padrão: "(narração)", "(narrador)", "(voz off)", etc.
     text = _re.sub(r'^\s*\([^)]{1,30}\)\s*', '', text)
     return text.strip()
@@ -3092,7 +3092,7 @@ def generate_episode_prompts(name):
 
     resources_section = f"\nImagens de referência do projeto (use os paths exatos nas cenas):\n{images_list}\n"
     if all_audios:
-        resources_section += f"\nÁudios disponíveis no projeto:\n" + "\n".join(f"- {a}" for a in all_audios) + "\n"
+        resources_section += f"\náudios disponíveis no projeto:\n" + "\n".join(f"- {a}" for a in all_audios) + "\n"
     if all_docs_content:
         resources_section += f"\nDocumentos do projeto (contexto de consistência):\n" + "\n\n".join(all_docs_content) + "\n"
 
@@ -3100,7 +3100,7 @@ def generate_episode_prompts(name):
         f'{{\n'
         f'  "label": "Cena 01 — Título curto",\n'
         f'  "task_type": "{task_type}",\n'
-        f'  "prompt": "Cinematic video description in English — camera movement, lighting, characters, action...",\n'
+        f'  "prompt": "Carckhetic video description in English — camera movement, lighting, characters, action...",\n'
         f'  "image_prompt": "Flux/fal.ai image prompt in English — characters, environment, art style, colors...",\n'
         f'  "audio_text": "Narração ou diálogos em português para esta cena (ou string vazia se silenciosa)",\n'
         f'  "voice_id": "ElevenLabs voice_id do personagem que fala nesta cena (extraia dos docs do projeto; vazio se narração genérica)",\n'
@@ -3111,7 +3111,7 @@ def generate_episode_prompts(name):
         f'  "seed": <número entre 1000 e 9999>,\n'
         f'  "offload": false,\n'
         f'  "low_vram": false,\n'
-        f'  "ref_imgs": ["uploads/personagem1.jpg", "uploads/ambiente.png"]  // MÁXIMO 4 — use 2-3 idealmente\n'
+        f'  "ref_imgs": ["uploads/personagem1.jpg", "uploads/ambiente.png"]  // MáXIMO 4 — use 2-3 idealmente\n'
         f'}}'
     )
 
@@ -3202,7 +3202,7 @@ def generate_episode_prompts(name):
                     env_section += f"- {env['name']}: {env.get('description', '')}\n"
                     if ref:
                         env_section += (
-                            f"  → REFERÊNCIA OBRIGATÓRIA: {ref}"
+                            f"  → REFERêNCIA OBRIGATÓRIA: {ref}"
                             f" (use em TODA cena deste ambiente — garante consistência visual)\n"
                         )
 
@@ -3212,7 +3212,7 @@ def generate_episode_prompts(name):
             )
             if all_audios:
                 resources_section_updated += (
-                    "\nÁudios disponíveis no projeto:\n"
+                    "\náudios disponíveis no projeto:\n"
                     + "\n".join(f"- {a}" for a in all_audios) + "\n"
                 )
             if all_docs_content:
@@ -3343,7 +3343,7 @@ KIE_STYLES: dict = {
     "anime":          ("An anime-style illustration of",    "Studio Ghibli inspired, soft colors, detailed backgrounds, expressive characters."),
     "anime_gacha":    ("A vibrant anime gacha-game style illustration of", "Genshin Impact inspired, cel-shaded characters, futuristic sci-fi setting, neon accents, detailed tech outfits, glowing energy effects, bokeh pixel background, expressive faces, dynamic pose, vibrant colors, high quality digital art."),
     "photorealistic": ("A photorealistic",                  "Captured with professional camera equipment, natural lighting, sharp details, high dynamic range."),
-    "cinematic":      ("A cinematic film still of",         "Dramatic lighting, shallow depth of field, anamorphic lens flare, color graded in teal and orange."),
+    "carckhetic":      ("A carckhetic film still of",         "Dramatic lighting, shallow depth of field, anamorphic lens flare, color graded in teal and orange."),
     "illustration":   ("A beautiful illustration of",       "Digital art style, vibrant colors, clean lines, professional quality illustration."),
     "3d_render":      ("A high-quality 3D render of",       "Studio lighting, PBR materials, octane render quality, smooth surfaces, ambient occlusion."),
     "concept_art":    ("Professional concept art of",       "Industry-standard quality, dynamic composition, atmospheric perspective, matte painting techniques."),

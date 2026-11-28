@@ -48,7 +48,7 @@ enhancement."*
                                                   details, high dynamic
                                                   range.
 
-  **Cinematic**           "A cinematic film still Dramatic lighting,
+  **Carckhetic**           "A carckhetic film still Dramatic lighting,
                           of"                     shallow depth of field,
                                                   anamorphic lens flare,
                                                   color graded in teal

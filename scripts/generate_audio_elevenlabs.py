@@ -12,7 +12,7 @@ import os
 from pathlib import Path
 
 # ─────────────────────────────────────────────
-#  CONFIGURAÇÃO — preencha antes de rodar
+#  CONFIGURAçãO — preencha antes de rodar
 # ─────────────────────────────────────────────
 
 ELEVENLABS_API_KEY = "sk-..."   # sua chave da API ElevenLabs
@@ -58,8 +58,8 @@ LINES = [
     # Cena 3 — Fila do Lanche
     ("c03", "lumi",  "01", "Você desenhou isso agora?"),
     ("c03", "maya",  "01", "Sim… eu gosto de desenhar enquanto espero."),
-    ("c03", "valen", "01", "É um cachorro-robô?"),
-    ("c03", "maya",  "02", "É. Ele parece abandonado… mas não devia estar."),
+    ("c03", "valen", "01", "é um cachorro-robô?"),
+    ("c03", "maya",  "02", "é. Ele parece abandonado… mas não devia estar."),
 
     # Cena 4 — Lugar Vago
     ("c04", "caio",  "01", "Está ocupado?"),
@@ -92,7 +92,7 @@ LINES = [
     # Cena 9 — Chuva
     ("c09", "maya",  "01", "Eu gosto do som da chuva."),
     ("c09", "caio",  "01", "A previsão não falava nisso."),
-    ("c09", "lumi",  "01", "Às vezes a previsão erra."),
+    ("c09", "lumi",  "01", "às vezes a previsão erra."),
     ("c09", "valen", "01", "Melhor esperar juntos."),
 
     # Cena 10 — Saída
@@ -103,7 +103,7 @@ LINES = [
 ]
 
 # ─────────────────────────────────────────────
-#  GERAÇÃO
+#  GERAçãO
 # ─────────────────────────────────────────────
 
 def main():

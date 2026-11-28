@@ -15,7 +15,7 @@ humana nela é.
 
 ------------------------------------------------------------------------
 
-# 🎬 TÍTULO OFICIAL
+# 🎬 TíTULO OFICIAL
 
 # INETUSX
 
@@ -176,19 +176,19 @@ crianças percebem que humanidade não pode ser otimizada.
 
 ------------------------------------------------------------------------
 
-# 💡 IDENTIDADE DA SÉRIE
+# 💡 IDENTIDADE DA SéRIE
 
-Não é distopia. É transição.
+Não é distopia. é transição.
 
-Não é humanos vs máquinas. É integração.
+Não é humanos vs máquinas. é integração.
 
-Não é sobre destruir o sistema. É sobre atualizá-lo.
+Não é sobre destruir o sistema. é sobre atualizá-lo.
 
 ------------------------------------------------------------------------
 
 # FRASE MANIFESTO
 
-"Adaptação não é apagar. É incluir."
+"Adaptação não é apagar. é incluir."
 
 ------------------------------------------------------------------------
 

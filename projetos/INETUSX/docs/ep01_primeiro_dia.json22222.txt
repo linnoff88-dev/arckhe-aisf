@@ -174,7 +174,7 @@
     "input_audio": "uploads/inetusx/eps01/c03_maya_01.mp3"
   },
   {
-    "label": "C03-D · Valen — 'É um cachorro-robô?'",
+    "label": "C03-D · Valen — 'é um cachorro-robô?'",
     "task_type": "talking_avatar",
     "prompt": "A student speaking from behind, deadpan expression, pretending not to be interested but clearly looking at the drawing. Dry curiosity.",
     "resolution": "480P",
@@ -184,7 +184,7 @@
     "input_audio": "uploads/inetusx/eps01/c03_valen_01.mp3"
   },
   {
-    "label": "C03-E · Maya — 'É. Ele parece abandonado… mas não devia estar.'",
+    "label": "C03-E · Maya — 'é. Ele parece abandonado… mas não devia estar.'",
     "task_type": "talking_avatar",
     "prompt": "A girl speaking quietly, looking down at her drawing with a contemplative, gently melancholy expression. A genuine thought, not just small talk.",
     "resolution": "480P",

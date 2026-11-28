@@ -20,7 +20,7 @@ As regras aqui são usadas pela IA ao gerar o campo `image_prompt` de cada cena.
 - Gato/cachorro pequeno: tamanho de um lap (colo)
 - Estudantes: altura humana normal (1,6m–1,8m)
 - Robô companheiro: altura de criança ou menor (não maior que os estudantes)
-- NUNCA exagere o tamanho de animais — eles são coadjuvantes, NÃO protagonistas visuais
+- NUNCA exagere o tamanho de animais — eles são coadjuvantes, NãO protagonistas visuais
 - Exceção SOMENTE se a descrição da cena explicitamente pedir tamanho diferente
 - Para especificar escala no prompt: "small hamster sitting on Maya's palm, hand-sized pet"
 

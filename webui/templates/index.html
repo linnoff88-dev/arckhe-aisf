@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>INEMA AI SF StoriesForce 4.12.5</title>
+<title>ARCKHé AI AI SF StoriesForce 4.12.5</title>
 <style>
   * { box-sizing: border-box; margin: 0; padding: 0; }
   body { font-family: system-ui, sans-serif; background: #0f0f13; color: #e0e0e0; min-height: 100vh; }
@@ -1031,7 +1031,7 @@
 <body>
 
 <header>
-  <h1>INEMA AI SF <span style="color:#e0e0e0">StoriesForce</span> <span class="ver">4.<span class="feat" title="12 recursos adicionados">12</span>.<span class="fix" title="5 correções">5</span></span></h1>
+  <h1>ARCKHé AI AI SF <span style="color:#e0e0e0">StoriesForce</span> <span class="ver">4.<span class="feat" title="12 recursos adicionados">12</span>.<span class="fix" title="5 correções">5</span></span></h1>
   <span>Interface de Geração de Vídeo</span>
 </header>
 
@@ -1105,7 +1105,7 @@
           <input type="text" id="input_image" placeholder="Ou informe URL/path da imagem" style="margin-top:8px">
         </div>
         <div class="field">
-          <label>Áudio da Fala <span style="color:#555">(mp3, wav)</span></label>
+          <label>áudio da Fala <span style="color:#555">(mp3, wav)</span></label>
           <div class="drop-zone" id="avatar-audio-drop"
                onclick="document.getElementById('input_audio_file').click()"
                ondragover="event.preventDefault();this.classList.add('drag')"
@@ -1337,7 +1337,7 @@
               <button id="nq-retry-btn"  class="nq-action-btn reset"   onclick="retryCurrentNq()"   title="Repetir do erro: reseta erros e continua de onde parou" style="display:none">↩ Repetir do erro</button>
               <button id="nq-restart-btn" class="nq-action-btn danger2" onclick="restartCurrentNq()" title="Reiniciar do zero: apaga tudo e começa do início" style="display:none">↺ Reiniciar do zero</button>
               <button id="nq-set-bg-btn" class="nq-action-btn" onclick="toggleSetAudioBgPanel()" title="Definir trilha de fundo para todas as cenas" style="border-color:#a855f7;color:#d8b4fe">🎵 Trilha</button>
-              <button id="nq-mix-audio-btn" class="nq-action-btn" onclick="mixAudioCurrentNq()" title="Mixar áudio nos vídeos silenciosos (aplica input_audio de cada cena via ffmpeg)" style="border-color:#22c55e;color:#86efac">🔊 Mix Áudio</button>
+              <button id="nq-mix-audio-btn" class="nq-action-btn" onclick="mixAudioCurrentNq()" title="Mixar áudio nos vídeos silenciosos (aplica input_audio de cada cena via ffmpeg)" style="border-color:#22c55e;color:#86efac">🔊 Mix áudio</button>
               <button id="nq-finalize-btn" class="nq-action-btn finalize" onclick="finalizeCurrentNq()" title="Concatenar todas as cenas concluídas em um vídeo final" disabled>🎬 Finalizar</button>
               <button class="nq-action-btn danger" onclick="deleteCurrentNq()" title="Excluir esta fila">🗑</button>
               <button class="nq-action-btn" onclick="toggleAllScenes(true)"  title="Expandir todas as cenas">⊞</button>
@@ -1757,13 +1757,13 @@ async function loadDetails(path) {
     if (m.ref_imgs) add('Imagens ref.', Array.isArray(m.ref_imgs) ? m.ref_imgs.map(p => p.split('/').pop()).join(', ') : m.ref_imgs);
     if (m.input_video) add('Vídeo entrada', m.input_video.split('/').pop());
     if (m.input_image) add('Imagem retrato', m.input_image.split('/').pop() || m.input_image);
-    if (m.input_audio) add('Áudio', m.input_audio.split('/').pop() || m.input_audio);
+    if (m.input_audio) add('áudio', m.input_audio.split('/').pop() || m.input_audio);
     add('Gerado em', m.generated_at);
 
     // Download buttons
     const dlBtns = [];
     dlBtns.push(`<a class="dl-btn" href="/download/${path.replace(/\.mp4$/, '.json')}" download>⬇ JSON</a>`);
-    if (m.input_audio) dlBtns.push(`<a class="dl-btn" href="/download/${m.input_audio}" download>⬇ Áudio</a>`);
+    if (m.input_audio) dlBtns.push(`<a class="dl-btn" href="/download/${m.input_audio}" download>⬇ áudio</a>`);
     if (m.input_image) dlBtns.push(`<a class="dl-btn" href="/download/${m.input_image}" download>⬇ Imagem</a>`);
     if (Array.isArray(m.ref_imgs)) {
       m.ref_imgs.forEach((p, i) =>
@@ -2516,7 +2516,7 @@ function buildSceneCard(nqId, job) {
     job.ref_imgs     ? ['Imagens ref.',    (Array.isArray(job.ref_imgs) ? job.ref_imgs : [job.ref_imgs]).map(p => p.split('/').pop()).join(', ')] : null,
     job.input_video  ? ['Vídeo entrada',   job.input_video.split('/').pop()] : null,
     job.input_image  ? ['Imagem retrato',  job.input_image.split('/').pop()] : null,
-    job.input_audio  ? ['Áudio',           job.input_audio.split('/').pop()] : null,
+    job.input_audio  ? ['áudio',           job.input_audio.split('/').pop()] : null,
     job.output_video ? ['Saída',           job.output_video] : null,
   ];
   detailRows.forEach(row => {
@@ -2742,7 +2742,7 @@ async function applyAudioBgToAll(clear = false) {
     if (!res.ok) { alert(data.error || 'Erro'); return; }
     const msg = clear
       ? `✓ Trilha removida de ${data.updated} cenas.`
-      : `✓ Trilha "${path.split('/').pop()}" (${volPct}%) aplicada em ${data.updated} cenas.\n\nClique em 🔊 Mix Áudio para mixar nos vídeos já gerados.`;
+      : `✓ Trilha "${path.split('/').pop()}" (${volPct}%) aplicada em ${data.updated} cenas.\n\nClique em 🔊 Mix áudio para mixar nos vídeos já gerados.`;
     alert(msg);
     document.getElementById('nq-set-bg-panel').style.display = 'none';
   } catch(e) {
@@ -3240,14 +3240,14 @@ async function loadProjectDetail(name) {
   const data    = await res.json();
   const projCfg = cfgRes.ok ? await cfgRes.json() : {};
   const detail = document.getElementById('proj-detail');
-  const FOLDER_LABELS = { imagens: '🖼 Imagens', audios: '🎵 Áudios', trilha: '🎶 Trilha', docs: '📄 Docs', figurantes: '👥 Figurantes' };
+  const FOLDER_LABELS = { imagens: '🖼 Imagens', audios: '🎵 áudios', trilha: '🎶 Trilha', docs: '📄 Docs', figurantes: '👥 Figurantes' };
   const FOLDER_ACCEPT = { imagens: 'image/*', audios: 'audio/*', trilha: 'audio/*', docs: '*/*', figurantes: 'image/*' };
 
   const KIE_STYLE_OPTIONS = [
     ['anime_gacha',    'Anime Gacha/Tech — Genshin, neon, futurista ⭐'],
     ['anime',          'Anime — Studio Ghibli, soft colors'],
     ['photorealistic', 'Photorealistic — natural lighting, sharp'],
-    ['cinematic',      'Cinematic — dramatic, teal & orange'],
+    ['carckhetic',      'Carckhetic — dramatic, teal & orange'],
     ['illustration',   'Illustration — digital art, vibrant'],
     ['3d_render',      '3D Render — PBR, octane quality'],
     ['concept_art',    'Concept Art — matte painting'],
@@ -3557,7 +3557,7 @@ async function epGenAll(nqId, projName, btn) {
   btn.disabled = true;
   const steps = [
     { label: '⏳ Imagens…',  url: `/nqueues/${nqId}/generate-images` },
-    { label: '⏳ Áudios…',   url: `/nqueues/${nqId}/generate-audio`  },
+    { label: '⏳ áudios…',   url: `/nqueues/${nqId}/generate-audio`  },
     { label: '⏳ Vídeos…',   url: `/nqueues/${nqId}/run`             },
   ];
   for (const step of steps) {
@@ -3593,7 +3593,7 @@ async function epGenImages(nqId, projName, btn) {
 
 async function epGenAudio(nqId, projName, btn) {
   const orig = btn.textContent;
-  btn.disabled = true; btn.textContent = '⏳ Áudios';
+  btn.disabled = true; btn.textContent = '⏳ áudios';
   try {
     const res = await fetch(`/nqueues/${nqId}/generate-audio`, {method:'POST'});
     const data = await res.json();
@@ -3782,7 +3782,7 @@ async function openEpisodeDetail(nqId, projectName) {
                 <div id="ej-inimg-picker-${nqId}-${j.id}" style="display:none;margin-top:5px;background:#0a0a14;border:1px solid #2a2a3a;border-radius:6px;padding:8px;max-height:220px;overflow-y:auto"></div>
               </div>
               <div>
-                <div class="proj-config-label">Áudio TTS (avatar)</div>
+                <div class="proj-config-label">áudio TTS (avatar)</div>
                 <input class="proj-config-input" id="ej-inaud-${nqId}-${j.id}" value="${esc(j.input_audio||'')}" placeholder="uploads/audio.mp3">
               </div>
             </div>
@@ -4212,8 +4212,8 @@ function _buildEpJobPayload(nqId, jobId, hasImgPrompt, hasAudioText, taskType) {
 const _TASK_DESC = {
   reference_to_video:     'Gera vídeo a partir de imagens de referência + prompt. Usa as "Imagens de referência" acima.',
   single_shot_extension:  'Estende um vídeo existente de 5–30s no mesmo plano. Requer "Vídeo de entrada".',
-  shot_switching_extension:'Estende com troca de plano cinematográfico (máx. 5s). Requer "Vídeo de entrada".',
-  talking_avatar:         'Gera avatar falante a partir de retrato + áudio (até 200s). Requer "Imagem retrato" e "Áudio TTS".',
+  shot_switching_extension:'Estende com troca de plano carckhetográfico (máx. 5s). Requer "Vídeo de entrada".',
+  talking_avatar:         'Gera avatar falante a partir de retrato + áudio (até 200s). Requer "Imagem retrato" e "áudio TTS".',
 };
 
 function onEpTaskTypeChange(nqId, jobId, val) {
@@ -5670,7 +5670,7 @@ refreshNamedQueues();
       <label id="edit-input-image-row">Imagem de entrada
         <input id="edit-input-image" type="text" class="modal-input">
       </label>
-      <label id="edit-input-audio-row">Áudio de entrada
+      <label id="edit-input-audio-row">áudio de entrada
         <input id="edit-input-audio" type="text" class="modal-input">
       </label>
     </div>
@@ -5734,7 +5734,7 @@ refreshNamedQueues();
             <option value="anime_gacha">Anime Gacha/Tech — Genshin, neon, futurista ⭐</option>
             <option value="anime">Anime — Studio Ghibli, soft colors</option>
             <option value="photorealistic">Photorealistic — natural lighting, sharp</option>
-            <option value="cinematic">Cinematic — dramatic, teal & orange</option>
+            <option value="carckhetic">Carckhetic — dramatic, teal & orange</option>
             <option value="illustration">Illustration — digital art, vibrant</option>
             <option value="3d_render">3D Render — PBR, octane quality</option>
             <option value="concept_art">Concept Art — matte painting</option>
@@ -5747,7 +5747,7 @@ refreshNamedQueues();
           <div style="font-size:.7rem;color:#555;margin-top:2px">Use o IP da máquina na rede — kie.ai precisa acessar as imagens de referência via HTTP.</div>
         </label>
       </div>
-      <div style="font-size:.72rem;color:#5a4a7a;font-weight:600;margin:8px 0 4px;border-top:1px solid #1a1a2a;padding-top:8px">🎵 Geração de Áudio</div>
+      <div style="font-size:.72rem;color:#5a4a7a;font-weight:600;margin:8px 0 4px;border-top:1px solid #1a1a2a;padding-top:8px">🎵 Geração de áudio</div>
       <label style="font-size:.78rem;color:#888">ElevenLabs API Key <span style="color:#555">(TTS)</span>
         <input id="gcfg-el-key" type="password" class="modal-input" placeholder="sk_xxxx..." style="margin-top:4px">
       </label>

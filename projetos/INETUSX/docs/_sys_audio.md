@@ -1,10 +1,10 @@
-# Guia de Geração de Áudio (ElevenLabs TTS)
+# Guia de Geração de áudio (ElevenLabs TTS)
 
 Este arquivo define as regras para geração de áudio via ElevenLabs TTS.
 O campo `audio_text` de cada cena usa estas diretrizes.
 
 ## Idioma
-- PORTUGUÊS BRASILEIRO exclusivamente
+- PORTUGUêS BRASILEIRO exclusivamente
 
 ## Tom e estilo
 - Narração: terceira pessoa, tempo presente, tom cinemático e envolvente
@@ -15,7 +15,7 @@ O campo `audio_text` de cada cena usa estas diretrizes.
 - Inclua APENAS o que será falado ou narrado — sem descrições de cena
 - Se a cena for silenciosa ou apenas musical, use string vazia: ""
 
-## REGRA CRÍTICA: Proporção áudio/vídeo
+## REGRA CRíTICA: Proporção áudio/vídeo
 O áudio DEVE caber na duração do clip de vídeo. Referência:
 - 5s de vídeo  = máximo 1-2 frases curtas (~15-20 palavras)
 - 8s de vídeo  = máximo 2-3 frases curtas (~25-35 palavras)
@@ -23,7 +23,7 @@ O áudio DEVE caber na duração do clip de vídeo. Referência:
 
 Texto longo demais gera áudio maior que o clip = dessincronização.
 
-EXCEÇÃO: se a descrição do episódio pedir EXPLICITAMENTE narração longa,
+EXCEçãO: se a descrição do episódio pedir EXPLICITAMENTE narração longa,
 monólogo ou sequência de imagens, pode usar texto mais longo e ajustar
 a duração do vídeo proporcionalmente.
 

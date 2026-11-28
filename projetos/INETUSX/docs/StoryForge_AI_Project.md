@@ -113,7 +113,7 @@ Para cada cena:
 -   Estilo consistente
 -   Seed fixa para personagens
 
-### 🎙️ Áudio
+### 🎙️ áudio
 
 -   Voz por personagem
 -   Emoção ajustada
@@ -121,7 +121,7 @@ Para cada cena:
 
 ### 🎵 Música
 
--   Trilha cinematográfica
+-   Trilha carckhetográfica
 -   Loop base ou faixa completa
 
 Arquivos organizados:
@@ -143,7 +143,7 @@ Saídas: - MP4 horizontal - MP4 vertical - Trailer automático
 
 ## 🔟 Montagem Final
 
-Sistema: - Junta cenas - Equaliza áudio - Aplica LUT cinematográfico -
+Sistema: - Junta cenas - Equaliza áudio - Aplica LUT carckhetográfico -
 Adiciona créditos - Exporta versão final
 
 Status final: - rendered - final
@@ -226,7 +226,7 @@ Produção: - Supabase (PostgreSQL)
 -   Leonardo
 -   OpenAI Images
 
-## Áudio
+## áudio
 
 -   ElevenLabs
 -   OpenAI TTS
@@ -287,7 +287,7 @@ Cada etapa só desbloqueia a próxima quando estiver `approved`.
 ## Fase 2
 
 -   Imagem
--   Áudio
+-   áudio
 
 ## Fase 3
 
